@@ -13,6 +13,7 @@ import (
 	monitorFeature "northstar/features/monitor"
 	reverseFeature "northstar/features/reverse"
 	sortableFeature "northstar/features/sortable"
+	chatFeature "northstar/features/chat"
 	"northstar/web/resources"
 
 	"github.com/delaneyj/toolbelt/embeddednats"
@@ -35,6 +36,7 @@ func SetupRoutes(ctx context.Context, router chi.Router, sessionStore *sessions.
 		monitorFeature.SetupRoutes(router),
 		sortableFeature.SetupRoutes(router),
 		reverseFeature.SetupRoutes(router),
+		chatFeature.SetupRoutes(router, sessionStore),
 	); err != nil {
 		return fmt.Errorf("error setting up routes: %w", err)
 	}

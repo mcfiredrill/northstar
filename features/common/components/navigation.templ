@@ -8,6 +8,7 @@ const (
 	PageMonitor
 	PageReverse
 	PageSortable
+  PageChat
 )
 
 templ Navigation(page page) {
@@ -18,6 +19,7 @@ templ Navigation(page page) {
 			<li class={ "hover:text-primary", templ.KV("text-primary", page == PageMonitor) }><a href="/monitor">System Monitoring</a></li>
 			<li class={ "hover:text-primary", templ.KV("text-primary", page == PageReverse) }><a href="/reverse">Reverse</a></li>
 			<li class={ "hover:text-primary", templ.KV("text-primary", page == PageSortable) }><a href="/sortable">Sortable</a></li>
+			<li class={ "hover:text-primary", templ.KV("text-primary", page == PageChat) }><a href="/chat">CHAT</a></li>
 		</ul>
 	</nav>
 }
